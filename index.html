@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Secure Image Cryptographic System</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Secure Image Cryptographic System</h1>
+
+      <div class="section">
+        <h2>Upload Image</h2>
+        <input type="file" id="imageInput" accept="image/*" />
+        <img id="preview" src="" alt="Preview" style="display: none" />
+      </div>
+
+      <div class="section">
+        <h2>Encryption Key</h2>
+        <input
+          type="password"
+          id="keyInput"
+          placeholder="Enter encryption key"
+        />
+        <small>Use a key to encrypt the image</small>
+      </div>
+
+      <div class="buttons">
+        <button onclick="encryptImage()">Encrypt</button>
+        <button onclick="downloadImage()">Download</button>
+      </div>
+
+      <div class="section">
+        <h2>Status</h2>
+        <p id="status">No image loaded.</p>
+      </div>
+
+      <canvas id="canvas" style="display: none"></canvas>
+    </div>
+
+    <!-- Popup for Decrypt Key -->
+    <div id="decryptPopup" class="popup">
+      <div class="popup-content">
+        <h2>Decrypt Image</h2>
+        <input
+          type="password"
+          id="decryptKeyInput"
+          placeholder="Enter Decrypt Key"
+        />
+        <button onclick="decryptImage()">Decrypt</button>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
